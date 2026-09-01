@@ -1,3 +1,13 @@
+---
+title: 7minti Telegram Bot
+emoji: ⚡
+colorFrom: indigo
+colorTo: purple
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # ProdSeller Telegram Reseller Bot
 
 A production-ready, asynchronous Python Telegram Bot for reselling digital and AI products sourced dynamically from the [ProdSeller API](https://prodseller.com/api-docs/). Built with strict cryptocurrency payment verification (Binance deposit history), atomic idempotency protections against double charges, encryption at rest for customer credentials, and structured database state machines.

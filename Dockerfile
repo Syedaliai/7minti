@@ -26,9 +26,13 @@ COPY --from=builder /root/.local /root/.local
 ENV PATH=/root/.local/bin:$PATH
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE=1
+ENV PORT=7860
 
 # Copy application source code
 COPY . .
+
+# Expose standard HuggingFace Space port
+EXPOSE 7860
 
 # Run bot
 CMD ["python", "-m", "app.main"]
