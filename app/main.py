@@ -274,10 +274,38 @@ async def handle_text_message(update, context):
             await search_query_handler(update, context)
 
 
+import os
+import threading
+from http.server import HTTPServer, BaseHTTPRequestHandler
+
+
+class HealthCheckHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header("Content-type", "text/plain")
+        self.end_headers()
+        self.wfile.write(b"7minti Telegram Reseller Bot is Running Healthy!")
+
+    def log_message(self, format, *args):
+        return  # Suppress health check access logs
+
+
+def start_health_check_server():
+    port = int(os.getenv("PORT", "8080"))
+    server = HTTPServer(("0.0.0.0", port), HealthCheckHandler)
+    server.serve_forever()
+
+
 def main():
     """Main application entrypoint."""
     setup_logging(settings.LOG_LEVEL)
     logger.info("Bootstrapping ProdSeller Telegram Reseller Bot...")
+
+    # If running on cloud platforms with PORT (e.g. Render.com Free Web Service)
+    if os.getenv("PORT"):
+        logger.info("Starting background health server on port %s", os.getenv("PORT"))
+        threading.Thread(target=start_health_check_server, daemon=True).start()
+
     app = create_bot_application()
     app.run_polling(drop_pending_updates=True)
 
