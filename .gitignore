@@ -1,0 +1,36 @@
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Database
+*.db
+*.db-shm
+*.db-wal
+*.sqlite3
+
+# Logs
+logs/
+*.log
+
+# IDE & Editor
+.vscode/
+.idea/
+.pytest_cache/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

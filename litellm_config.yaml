@@ -1,0 +1,48 @@
+model_list:
+  - model_name: claude-3-7-sonnet-20250219
+    litellm_params:
+      model: nvidia_nim/deepseek-ai/deepseek-v4-flash-0731
+      api_key: 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
+      drop_params: true
+
+  - model_name: claude-3-5-sonnet-20241022
+    litellm_params:
+      model: nvidia_nim/deepseek-ai/deepseek-v4-flash-0731
+      api_key: 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
+      drop_params: true
+
+  - model_name: claude-3-5-sonnet-20240620
+    litellm_params:
+      model: nvidia_nim/deepseek-ai/deepseek-v4-flash-0731
+      api_key: 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
+      drop_params: true
+
+  - model_name: claude-3-5-haiku-20241022
+    litellm_params:
+      model: nvidia_nim/deepseek-ai/deepseek-v4-flash-0731
+      api_key: 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
+      drop_params: true
+
+  - model_name: claude-3-haiku-20240307
+    litellm_params:
+      model: nvidia_nim/deepseek-ai/deepseek-v4-flash-0731
+      api_key: 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
+      drop_params: true
+
+  - model_name: claude-3-opus-20240229
+    litellm_params:
+      model: nvidia_nim/deepseek-ai/deepseek-v4-flash-0731
+      api_key: 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
+      drop_params: true
+
+  - model_name: "*"
+    litellm_params:
+      model: nvidia_nim/deepseek-ai/deepseek-v4-flash-0731
+      api_key: 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
+      drop_params: true
+
+litellm_settings:
+  drop_params: true
+
+general_settings:
+  master_key: sk-litellm-proxy
